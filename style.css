@@ -1,0 +1,133 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+body{
+background: url("pecera.jpg") no-repeat;
+    background-size: cover;
+   min-height:100vh;
+    background-position: center;
+}
+.header
+{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 1.3rem 10%;
+    background: rgba(0, 0, 0,.2);
+    backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+.header::before
+{
+content:'';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0,.2);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+
+}
+
+
+.header__logo
+{
+    font-size: 2rem;
+    font-weight: 700;
+}
+.header__ul
+{
+    display: flex;
+}
+.header__li
+{
+    padding: 0 50px;
+}
+.header__a
+{
+   font-size: 1.15rem;
+    color: white;
+  font-weight: 500;
+}
+
+.icons{
+    position: absolute;
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    right: 5%;
+}
+#check{
+    display: none;
+}
+
+@media (max-width: 1100px){
+
+    .header
+    {
+        padding: 1.3rem 5%;
+    }
+
+
+}
+@media (max-width: 986px){
+
+    .icons{
+       display: inline-block;
+    }
+    #check:checked~.icons #menu_icon{
+        display: none;
+    }
+
+    .header__nav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+       height: 0;
+        background: rgba(0, 0, 0,.1);
+        backdrop-filter: blur(50px);
+        box-shadow: 0.5rem 1rem rgba(0, 0, 0,.1);
+        transition: .3s ease;
+        overflow: hidden;
+    }
+    #check:checked~.header__nav{
+        height: 17.7rem;
+    }
+
+    .header__ul{
+       display: block;
+    }
+    .icons #close_icon{
+        display:none ;
+    }
+    #check:checked~.icons #close_icon{
+        display: block;
+    }
+    .header__li{
+       margin: 1.5rem 0;
+        text-align: center;
+font-size: 1.1rem;
+
+    }
+    .header__a{
+        text-align: center;
+    }
+
+
+}
+
